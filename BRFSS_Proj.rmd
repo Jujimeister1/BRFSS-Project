@@ -1,0 +1,24 @@
+---
+title: "BRFSS Applied Statistics Project"
+author: "Eugene Jang"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Introduction
+
+The Behavioral Risk Factor Surveillance System (BRFSS) is the largest ongoing telephone health survey in the world, administered by the CDC in partnership with U.S. states and territories.  Initiated in 1984, the BRFSS collects self‐reported data on health behaviors, chronic conditions, and preventive service use among noninstitutionalized adults.  This project uses the 2023 public‐use BRFSS data set to explore how key predictors—such as days of exercise, age, and education—relate to self‐rated health through both simple and multiple linear regression, accounting for the survey’s complex weighting scheme.
+
+# Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+library(tidyverse)   # data manipulation & visualization
+library(survey)      # survey‐weighted analyses
+library(GGally)      # correlation plots
+library(car)         # VIF diagnostics
+library(broom)       # tidy model output
